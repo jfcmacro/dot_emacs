@@ -1,0 +1,34 @@
+;;
+;; Adding command to manage auctex. This was suggested by the AucTex user
+;; manual
+;;
+
+(setq TeX-auto-save t)
+(setq TeX-parse-self t)
+(setq-default TeX-master nil)
+
+;;
+;; Enable RefTeX
+;;
+(require 'reftex)
+(add-hook 'LaTeX-mode-hook 'turn-on-reftex)
+(add-hook 'latex-mode-hook 'turn-on-reftex)
+
+;;
+;; Enable TeX-PDF-mode
+(setq TeX-PDF-mode t)
+;;
+;; Biding keys to commands
+;;
+(global-set-key (kbd "<f5>") 'compile)
+(global-set-key (kbd "<f6>") 'recompile)
+
+;;
+;; Emacs columns, lines, etc.
+;;
+(setq column-number-mode t)
+;;
+;;
+;;
+(setq indicate-empty-line t)
+(setq-default show-trailing-whitespace t)
